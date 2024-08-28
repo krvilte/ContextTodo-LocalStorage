@@ -4,7 +4,7 @@ import { TodoProvider } from "./contexts/todoContext";
 
 
 export default function App() {
-  const todos = [todos, setTodos] = useState([])
+  const [todos, setTodos] = useState([])
   
   // Add todo
   const addTodo = (todo)=>{
@@ -28,6 +28,7 @@ export default function App() {
   return (
     <div>
       <TodoProvider value={{todos, addTodo, editTodo, deleteTodo, todoComplete}}>
+        <TodoForm/>
       </TodoProvider>
     </div>
   )
