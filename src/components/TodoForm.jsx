@@ -7,25 +7,23 @@ function TodoForm() {
 
   const add = (e) => {
     e.preventDefault()
-    if (!todo) return
-    addTodo({todo, completed: false})
+    addTodo({title:todo, completed:false})
     setTodo("")
   }
 
   return (
-    <div>
-      <form onSubmit={add} action="#" className='flex'>
-        <input type="text" 
-               name="todo-form"
-               value={todo}
-               placeholder='Write Todo...'
-               className='w-full border border-black/10 rounded-l-lg px-3 outline-none duration-150 bg-white/20 py-1.5' 
-               onChange={(e)=>{
-                setTodo(e.target.value)
-               }}/>
-        <button className='rounded-r-lg px-3 py-1 bg-green-600 text-white shrink-0' type="submit">Add+</button>
-      </form>
-    </div>
+    <form onSubmit={add} className='flex'>
+      <input type="text" 
+              value={todo}
+              placeholder='Write Todo...'
+              className='w-full border border-black/10 rounded-l-lg px-3 outline-none duration-150 bg-white/20 py-1.5' 
+              onChange={(e)=>{
+              setTodo(e.target.value)
+              }}/>
+      <button type="submit"
+      className='rounded-r-lg px-3 py-1 bg-green-600 text-white shrink-0'
+      >Add</button>
+    </form>
   )
 }
 
